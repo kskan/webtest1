@@ -50,6 +50,8 @@ a.bottom:hover{
 }
 .header .nav ul{
 	margin-right: 80px;
+	position: relative;
+	z-index: 2;
 }
 .header .nav ul li{
   float: left;
@@ -61,11 +63,27 @@ a.bottom:hover{
 	text-align: center;
 	color:#ffffff;
 	cursor: pointer;
+	position: relative;
+	z-index: 2;
+	/* transition: background 0.3s; */
+	
 }
-.header .nav ul li:hover{
-  
+.header .nav ul li:hover+li.background{
+		height: 100px;
+		margin-top:0px; 
+} 
+
+.header .nav ul li.background{
+	transition: height 0.3s,margin 0.3s;
+	position: absolute;
 	background-color: #000;
+	margin-top: 100px;
+	height: 0px;
+	width: 80px;
+	z-index: 1;
 }
+
+
 /*      banner    */
 .banner{
 	position: relative;
